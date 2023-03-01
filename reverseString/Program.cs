@@ -16,16 +16,16 @@ namespace reverseString
             foreach (char c in theString)
             {
                 reverseString = c + reverseString;
-                
             }
             Console.Write($"Reverse String is : {reverseString} ");
             Console.ReadLine();
             // Using String.Equals() method to check if the string is a palindrome
-            bool equal = String.Equals(theString, reverseString, StringComparison.Ordinal);
+            bool equal = String.Equals(theString, reverseString, StringComparison.OrdinalIgnoreCase);
             if (equal == true)
             {
                 Console.WriteLine($"The string {theString} is a palindrome");
-            } else
+            } 
+            else
             {
                 Console.WriteLine($"The string {theString} is not a palindrome");
             }
