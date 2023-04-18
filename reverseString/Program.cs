@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 
 namespace reverseString
 {
@@ -6,28 +7,29 @@ namespace reverseString
         static void Main(string[] args)
         {
             // Asking for a string as a input
-            string inputString = ReverseStringMethods.InputString();
-
+            Console.Write("Please enter a String : ");
+            // Using Console.ReadLine() to read the input string
+            string inputString = Console.ReadLine();
             // Initializing a string variable to an empty string
             string reverseString = string.Empty;
-
             // Using a foreach loop to reverse the string
             foreach (char c in inputString)
             {
                 reverseString = c + reverseString;
             }
-            ReverseStringMethods.OutputReverse(reverseString);
-
+            Console.Write($"Reverse String is : {reverseString} ");
+            Console.ReadLine();
             // Using String.Equals() method to check if the string is a palindrome
             bool equal = String.Equals(inputString, reverseString, StringComparison.OrdinalIgnoreCase);
             if (equal == true)
             {
-                ReverseStringMethods.PalindromeString(inputString);
-            }
+                Console.WriteLine($"The string {inputString} is a palindrome");
+            } 
             else
             {
-                ReverseStringMethods.NotPalindromeString(inputString); 
+                Console.WriteLine($"The string {inputString} is not a palindrome");
             }
+            Console.ReadLine();
         }
     }
 }
